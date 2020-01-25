@@ -1,0 +1,3 @@
+-You can send messages to different rooms.
+-Thats all
+-Firstly start alternate server class to run.

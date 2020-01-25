@@ -1,0 +1,6 @@
+.button{
+    -fx-background-color: aliceblue;
+}
+.button:hover{
+    -fx-text-fill: antiquewhite;
+}

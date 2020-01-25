@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="1179.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <bottom>
+      <HBox prefHeight="172.0" prefWidth="1057.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="129.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="39.0" prefWidth="169.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="169.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year :" />
+                        <ComboBox fx:id="yearComboBox" onAction="#listGraduatesWithYear" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="122.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="172.0" prefWidth="771.0">
+               <children>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="59.0" prefWidth="173.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student  :    " />
+                        <ComboBox fx:id="studentComboBox" onAction="#listTakenWithGraduate" prefWidth="150.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="69.0" prefWidth="580.0">
+                     <children>
+                        <Text fx:id="averageofGraduate" strokeType="OUTSIDE" strokeWidth="0.0" text="GPA of student : " />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="172.0" prefWidth="184.0">
+               <children>
+                  <CheckBox fx:id="includeYearCheck" mnemonicParsing="false" onAction="#listCourseWithSlot" prefHeight="46.0" prefWidth="105.0" text="include Year" />
+                  <HBox prefHeight="61.0" prefWidth="184.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slot :    " wrappingWidth="49.9560546875" />
+                        <ComboBox fx:id="slotComboBox" onAction="#listCourseWithSlot" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <Text fx:id="averageOfCourseText" strokeType="OUTSIDE" strokeWidth="0.0" text="Average of Course :" />
+                  <Text fx:id="averageOfSlotText" strokeType="OUTSIDE" strokeWidth="0.0" text="Average of Slot S :" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="coursesButton" mnemonicParsing="false" text="Menu">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showCourses" text="Show Courses" />
+                  <MenuItem mnemonicParsing="false" onAction="#showGraduates" text="Show Graduates" />
+                  <MenuItem mnemonicParsing="false" onAction="#showTaken" text="Show Taken Courses" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="442.0" prefWidth="573.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </center>
+   <left>
+      <VBox prefHeight="442.0" prefWidth="208.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Graduates" />
+            <ListView fx:id="GraduateListView" prefHeight="426.0" prefWidth="188.0" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="442.0" prefWidth="208.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Courses" />
+            <ListView fx:id="courseListView" prefHeight="426.0" prefWidth="188.0" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
